@@ -1,0 +1,255 @@
+<%- include ('./adminheader') -%>
+
+<!--
+<div class="container-fluid mt-3">
+    <div class="row mt-3">     -->
+
+<div class="col-sm mt-3 mb-4" style="background-color: rgb(230, 252, 254)">
+
+    <div class="pt-3 pb-3">
+        <h3 class="text-center">Search Any Student</h3>
+    </div>
+
+  <!-- Search Bar -->
+  <div class=" row justify-content-center">
+    <form action="/action_page">
+      <input type="text" placeholder="Search.." name="search" id="searchinput">
+      <button type="submit" id="searchbtn"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+
+
+<!-- Add Student-->
+<button type="button" class="btn mt-3 mb-3 " data-toggle="collapse" data-target="#student" style="background-image: linear-gradient(darkcyan,darkcyan); color: white;">Add New Student</button>
+<div id="student" class="collapse mb-4">
+  <div class="container">
+      <h2 class="text-center mt-3 text-danger">Student Registration Form</h2>
+  
+      <form action="/addstudent" class="was-validated mt-3 pb-3" method="POST">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" required>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <!--
+        <div class="form-group">
+          <label for="regenum">Registration Number:</label>
+          <input type="number" class="form-control" id="regnum" placeholder="Enter Registration Number" name="regnum" required>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+
+        -->
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+<!--
+        <div class="form-group">
+          <label for="cpassword"> Confirm Password:</label>
+          <input type="password" class="form-control" id="cpassword" placeholder="Enter confirm password" name="cpassword">
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+
+-->        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" id="email" placeholder="Enter your email" name="email" required>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" class="form-control" id="city" placeholder="Enter your City" name="city" required>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="image">Photo</label>
+          <input type="file" class="form-control" id="image" placeholder="Enter your image" name="image" accept="image/*">
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+  </div>
+</div>
+
+</div>
+
+
+<h3 class="text-center text-danger">Students-List</h3>
+
+<div class="container">
+
+  <table class="table table-borderless">
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>city</th>
+    </tr>
+    <% students.forEach(function(entry){ %>
+    
+      <tr>
+        <td> <a href="#"><img src="../images/<%= entry.image %>" alt="" style="width: 50px; border-radius: 50%;"></a></td>
+        <td> <a href="/admpagestu/<%= entry._id %>"><%= entry.username %></a></td>
+        <td><%= entry.email %></td>
+        <td><%= entry.city %></td>
+      </tr>
+    <% }) %>
+  </table>
+</div>
+
+
+
+
+<!-- <input type="file" id="img" name="img" accept="image/*">
+-->
+
+
+<div class="col-sm mt-3 mb-4" style="background-color: rgb(231, 255, 192);">
+
+<div class="pt-3 pb-3">
+    <h3 class="text-center">Search Any Book</h3>
+</div>
+
+<!-- Search Bar -->
+  <div class=" row justify-content-center">
+    <form action="/action_page">
+      <input type="text" placeholder="Search.." name="search" id="searchinput">
+      <button type="submit" id="searchbtn"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+
+  <!-- Add Book-->
+<button type="button" class="btn  mt-3 mb-3" data-toggle="collapse" data-target="#book" style="background-image: linear-gradient(red,black); color: white;">Add New Book</button>
+<div id="book" class="collapse mb-4">
+  <div class="container">
+      <h2 class="text-center mt-3 text-danger">Book Registration Form</h2>
+  
+      <form action="/addbook" class="was-validated mt-3 pb-3" method="POST">
+        <div class="form-group">
+          <label for="bname">Book Name:</label>
+          <input type="text" class="form-control" id="bname" placeholder="Enter Book Name" name="bookname" required>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="aname">Auther Name:</label>
+            <input type="text" class="form-control" id="aname" placeholder="Enter Auther Name" name="auther" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="total">Total Books</label>
+            <input type="text" class="form-control" id="total" placeholder="Enter Total Books" name="total" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>          
+
+          <div class="form-group">
+            <label for="likes">Total Likes</label>
+            <input type="text" class="form-control" id="likes" placeholder="Enter Total Books" name="likes" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="remain">Remain Books</label>
+            <input type="text" class="form-control" id="remain" placeholder="Enter Total Books" name="remain" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="image">Photo</label>
+            <input type="file" class="form-control" id="image" placeholder="Enter your image" name="image" accept="image/*">
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+
+        <div class="form-group form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="remember" required> I agree to add new book.
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Check this checkbox to continue.</div>
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+      </form>
+  </div>
+</div>
+
+</div>
+
+</div>
+
+
+<!--
+
+</div>
+</div>
+
+
+-->
+
+<style>
+  th{
+    color: brown;
+   
+  }
+  td{
+    color: blue ;
+    
+  }
+</style>
+
+<h3 class="text-center text-danger">Book-List</h3>
+
+<div class="container">
+
+  <table class="table table-borderless">
+    <tr>
+      <th></th>
+      <th>Book Name</th>
+      <th>Author</th>
+      <th>Total</th>
+      <th>Likes</th>
+      <th>Remain</th>
+    </tr>
+    <% books.forEach(function(entry){ %>
+    
+      <tr>
+        <td> <a href="/"><img src="../images/<%= entry.image %>" alt="" style="width: 50px; border-radius: 50%;"></a></td>
+        <td> <a href="/admpage/<%= entry._id %>"><%= entry.bookname %></a></td>
+        <td><%= entry.auther %></td>
+        <td><%= entry.total %></td>
+        <td><%= entry.likes %></td>
+        <td><%= entry.remain %></td>
+      </tr>
+    <% }) %>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include ('../partials/footer') -%>

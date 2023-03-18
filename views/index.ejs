@@ -1,0 +1,245 @@
+<%- include ('./partials/header') -%>
+
+<div class="row mt-5">
+  <div class="col-md-4" id="bbt" style="background-image: linear-gradient(darkcyan, black);">
+    <div class="container-fluid">
+        <h2 class="text-center pt-3 text-white">Books</h2>
+        <p class="text-center text-white">Ocean Of Technical Books</p>            
+        <table class="table table-borderless">
+          <thead>
+            <tr>
+              <th>Branch Name</th>
+              <th>Total Books</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+              <td>Computer Science & Engineering</td>
+              <td>5,560</td>
+            </tr>
+            <tr>
+              <td>Electrical Engineering</td>
+              <td>3,012</td>
+            </tr>
+            <tr>
+              <td>Electronics & Communication Engineering</td>
+              <td>4,211</td>
+            </tr>
+            <tr>
+                <td>Auto Mobile Engineering</td>
+                <td>2,227</td>
+              </tr>
+              <tr>
+                <td>Mechanical Engineering</td>
+                <td>3,536</td>
+              </tr>
+              <tr>
+                <td>Civil Engineering</td>
+                <td>4,302</td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
+
+
+  <div class="col-md-4">
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+      <!-- Indicators -->
+      <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+      </ul>
+      
+      <!-- The slideshow -->
+      <div class="carousel-inner " style="background-image: linear-gradient(rgb(222, 228, 228), rgb(221, 224, 225));">
+        <div class="carousel-item active pt-3">
+          <img src="./images/1580476240958.png" alt="Los Angeles" width="100%" height="600" style="width: 100%;">
+        </div>
+        <div class="carousel-item pt-3">
+          <img src="./images/logoa.jpg" alt="Chicago" width="100%" height="600" style="width: 100%;" >
+        </div>
+        <div class="carousel-item pt-3">
+          <img src="./images/logo.png" alt="New York" width="100%" height="600" style="width: 100%;" >
+        </div>
+      </div>
+      
+      <!-- Left and right controls -->
+      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+  </div>
+
+
+  <div class="col-md-4">
+    <div class="container">
+      <h2 class="text-center" style="color: darkcyan;">Student Login Form</h2>
+  
+      <form action="/student" class="was-validated mt-3" method="POST">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="text" class="form-control" id="email" placeholder="Enter email" name="email" required>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password:</label>
+          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password" required>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <!--
+        <div class="form-group form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="remember" required> I agree your <a href="#">Terms & Conditions.</a>.
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Check this checkbox to continue.</div>
+          </label>
+        </div>
+
+        -->
+        <button type="submit" class="btn text-white" style="background-image: linear-gradient(darkcyan, darkblue);">Submit</button>
+      </form>
+    </div>
+  </div>
+  
+
+</div>
+
+
+
+
+
+
+
+
+  <!-- popular books
+
+  <div class="container-fluid mt-3 " style="background-image: linear-gradient(red, black);">
+    <h1 class="text-center text-white pt-4 ">Some Popular Books</h1>
+    <div class="row mt-3">
+      <div class="col-sm d-flex justify-content-center mt-3 mb-4">
+        
+        <a href=""><img src="../images/bookImage.jpg" alt=""></a>
+        <br> <a href="" style="padding: 10px;" class="text-white"><%- BookTitle %></a>
+    
+    </div>
+      <div class="col-sm d-flex justify-content-center mt-3 mb-4">
+
+        <a href=""><img src="../images/bookImage.jpg" alt=""></a>
+        <br> <a href="" style="padding: 10px;" class="text-white"><%- BookTitle %></a>
+
+      </div>
+      <div class="col-sm d-flex justify-content-center mt-3 mb-4">
+          
+        <a href=""><img src="../images/bookImage.jpg" alt=""></a>
+        <br> <a href="" style="padding: 10px;" class="text-white"><%- BookTitle %></a>
+        
+      </div>
+      <div class="col-sm d-flex justify-content-center mt-3 mb-4">
+          
+        <a href=""><img src="../images/bookImage.jpg" alt=""></a>
+        <br> <a href="" style="padding: 10px;" class="text-white"><%- BookTitle %></a>
+        
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-sm d-flex justify-content-center mt-2 mb-5">
+        
+        <a href=""><img src="../images/bookImage.jpg" alt=""></a>
+        <br> <a href="" style="padding: 10px;" class="text-white"><%- BookTitle %></a>
+    
+    </div>
+      <div class="col-sm d-flex justify-content-center mt-3 mb-4">
+
+        <a href=""><img src="../images/bookImage.jpg" alt=""></a>
+        <br> <a href="" style="padding: 10px;" class="text-white"><%- BookTitle %></a>
+
+      </div>
+      <div class="col-sm d-flex justify-content-center mt-3 mb-4">
+          
+        <a href=""><img src="../images/bookImage.jpg" alt=""></a>
+        <br> <a href="" style="padding: 10px;" class="text-white"><%- BookTitle %></a>
+        
+      </div>
+      <div class="col-sm d-flex justify-content-center mt-3 mb-4">
+          
+        <a href=""><img src="../images/bookImage.jpg" alt=""></a>
+        <br> <a href="" style="padding: 10px;" class="text-white"><%- BookTitle %></a>
+        
+      </div>
+    </div>
+  </div>
+
+
+-->
+
+
+
+
+
+
+
+
+ <!-- Add Admin-->
+
+
+
+  <div class="col-sm mt-3 mb-4" style="background-color: rgb(248, 248, 248)">
+
+  
+    <button type="button" class="btn mt-3 mb-3 " data-toggle="collapse" data-target="#student" style="background-image: linear-gradient(darkcyan,darkcyan); color: white;">Add New Admin</button>
+    <div id="student" class="collapse mb-4">
+    <div class="container">
+        <h2 class="text-center mt-3" style="color: darkcyan;">Admin Registration Form</h2>
+    
+        <form action="/addadmin" class="was-validated mt-3 pb-3" method="POST">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+          
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+         
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" placeholder="Enter your email" name="email" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+    
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" id="city" placeholder="Enter your City" name="city" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+    
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    </div>
+    
+    </div>
+
+
+
+  
+
+
+<%- include ('./partials/footer') -%>
+

@@ -1,0 +1,77 @@
+<%- include ('../partials/header') -%>
+
+<style>
+   .col-sm h5 span{
+        color: blue;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+  .col-sm h5 a{
+        color: darkgoldenrod;
+        font-size: 25px;
+        font-weight: 800;
+    }
+</style>
+
+
+<div class="container">
+    <div class="row mb-5">
+        <div class="col-sm">
+            <img src="../images/<%= book.image %>" alt="" style="width: 250px; border-radius: 5%;">
+        </div>
+        <div class="col-sm mt-3">
+            <h5><a href="#"><i class="fa fa-book "></i> Book Name: </a><span><%= book.bookname%></span></h5>
+            <h5><a href="#"><i class="fa fa-user "></i> Author: </a><span><%= book.auther%></span></h5>
+            <h5><a href="#"><i class="fa fa-gratipay "></i> Likes: </a><span><%= book.likes%></span></h5>
+            <h5><a href="#"><i class="fa fa-sun-o "></i> Total: </a><span><%= book.total%></span></h5>
+            <h5><a href="#"><i class="fa fa-minus-circle "></i> Remain: </a><span><%= book.remain%></span></h5>
+
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+    th{
+      color: brown;
+     
+    }
+    td{
+      color: blue ;
+      
+    }
+  </style>
+  
+ <!-- <h3 class="text-center text-danger">Book-List</h3>  --> 
+  
+  <div class="container">
+  
+    <table class="table table-borderless">
+      <tr>
+        <th></th>
+        <th>Book Name</th>
+        <th>Author</th>
+       <!-- <th>Total</th>
+        <th>Likes</th>
+        <th>Remain</th>  -->
+      </tr>
+      <% books.forEach(function(entry){ %>
+      
+        <tr>
+          <td> <a href="/"><img src="../images/<%= entry.image %>" alt="" style="width: 50px; border-radius: 50%;"></a></td>
+          <td> <a href="/admpage/<%= entry._id %>"><%= entry.bookname %></a></td>
+          <td><%= entry.auther %></td>
+       <!--  <td><%= entry.total %></td>
+          <td><%= entry.likes %></td>
+          <td><%= entry.remain %></td>   --> 
+        </tr>
+      <% }) %>
+    </table>
+  </div>
+
+
+
+
+<%- include ('../partials/footer') -%>

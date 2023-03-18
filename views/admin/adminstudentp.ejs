@@ -1,0 +1,76 @@
+<%- include ('../student/studentHeader') -%>
+
+<style>
+   .col-sm h5 span{
+        color: blue;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+  .col-sm h5 a{
+        color: darkgoldenrod;
+        font-size: 25px;
+        font-weight: 800;
+    }
+</style>
+
+
+<div class="container">
+    <div class="row mb-5">
+        <div class="col-sm">
+            <img src="../images/<%= student.image %>" alt="" style="width: 250px; border-radius: 5%;">
+        </div>
+        <div class="col-sm mt-3">
+            <h5><a href="#"><i class="fa fa-user "></i> Student Name: </a><span><%= student.username%></span></h5>
+            <h5><a href="#"><i class="fa fa-user "></i> email: </a><span><%= student.email%></span></h5>
+            <h5><a href="#"><i class="fa fa-gratipay "></i> City: </a><span><%= student.city%></span></h5>
+            <h5><a href="#"><i class="fa fa-sun-o "></i> Created date: </a><span><%= student.createdOn%></span></h5>
+
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+    th{
+      color: brown;
+     
+    }
+    td{
+      color: blue ;
+      
+    }
+  </style>
+  
+ <!-- <h3 class="text-center text-danger">Book-List</h3>  --> 
+  
+  <div class="container">
+  
+    <table class="table table-borderless">
+      <tr>
+        <th></th>
+        <th>Book Name</th>
+        <th>Auther</th>
+       <!-- <th>Total</th>
+        <th>Likes</th>
+        <th>Remain</th>  -->
+      </tr>
+      <% students.forEach(function(entry){ %>
+      
+        <tr>
+          <td> <a href="/"><img src="../images/<%= entry.image %>" alt="" style="width: 50px; border-radius: 50%;"></a></td>
+          <td> <a href="/admpagestu/<%= entry._id %>"><%= entry.username %></a></td>
+          <td><%= entry.city %></td>
+       <!--  <td><%= entry.total %></td>
+          <td><%= entry.likes %></td>
+          <td><%= entry.remain %></td>   --> 
+        </tr>
+      <% }) %>
+    </table>
+  </div>
+
+
+
+
+<%- include ('../partials/footer') -%>
